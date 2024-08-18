@@ -11,14 +11,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root")); 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const headerStyle = document.querySelector(".heading");     // Saving the css color to a jsx variable that can be manipulated later
 
 
 
 function greeting(){
     const time = new Date().getHours();
     if(time >= 0 && time < 12){
-        return "Good morining"
+        return "Good morining";
     }
 
     if (time >= 12 && time < 18){
@@ -30,16 +31,29 @@ function greeting(){
     }
 }
 
+function styled (greeting){
+    if (theGreeting == "Good morining"){
+        return "red";
+    }
+    if (theGreeting == "Good Afternoon"){
+        return "green";
+    }
+    if (theGreeting == "Good evening"){
+        return "blue";
+    }
+}
 
 
 
 const theGreeting = greeting(); 
+const styledColor = styled(greeting); 
 
 
 root.render(
     <React.StrictMode>
         <div>
-            <h1>Memorizing React Boiler Plate! {theGreeting}</h1>
+            <h1 className = "heading" style = {{color: styledColor}}>Memorizing React Boiler Plate! {theGreeting}</h1>
+            <p>Color changes based on time of day!</p>
         </div>
     </React.StrictMode>
 ); 
