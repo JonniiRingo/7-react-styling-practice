@@ -12,8 +12,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const headerStyle = document.querySelector(".heading");     // Saving the css color to a jsx variable that can be manipulated later
-
 
 
 function greeting(){
